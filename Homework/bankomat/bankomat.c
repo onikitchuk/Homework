@@ -19,21 +19,21 @@ int main(void){
     int pinUs;
 
 
-    // Массив PIN - кодов пользователей
+ // Массив PIN - кодов пользователей
         for(i = 0; i < SIZE; i++){
             pinOfUsers[i] = (2534 + 76*i);
             printf("%d ", pinOfUsers[i]);
         }
 
         printf("\n");
-    // Массив ACCOUNTS пользователей
+ // Массив ACCOUNTS пользователей
         for(i = 0; i < SIZE; i++){
             accountsOfUsers[i] = (12000 + 900*i);
             printf("%d ", accountsOfUsers[i]);
         }
         printf("\n");
 
-// Введение PIN - кода пользователем
+ // Введение PIN - кода пользователем
         for(j = 0; j <= 3; j++){
                 if(j == 2){    // Если 2 раза неправильно - предупреждение
                     printf("\nLast try!\n");
@@ -52,7 +52,7 @@ int main(void){
                 for(i = 0; i < SIZE; i++){
                     pinPtr = &pinOfUsers[i];
                     pinUs = *pinPtr;
-                    // Если введенный PIN совпал с i-м, цикл останавливается,
+ // Если введенный PIN совпал с i-м, цикл останавливается,
                     if(enterPin == pinUs){
                         printf("\nHello, Vladimir!");
                         userAccount = accountsOfUsers[i]; // В переменную записываем значение счета
@@ -63,7 +63,7 @@ int main(void){
             }
 
 
-    // Если PIN - код верный, пользователю открывается доступ к управлению счётом
+ // Если PIN - код верный, пользователю открывается доступ к управлению счётом
         for(;;){
 
                 printf("\n--------------------------------------\n");
@@ -74,12 +74,12 @@ int main(void){
                 printf("\n 4 - End the work\n");
                 printf("\n");
                 scanf(" %d", &choice);
-    // Операции со счетом - в соответствии с пунктами меню
+ // Операции со счетом - в соответствии с пунктами меню
                 switch(choice){
                     case 1 :
                         printf("\n--------------------------------------\n");
                         printf("\nYour balance is - %d", userAccount);
-      // Кокда операция по счету заверщена, предлагается выбор - продолжить работу, или завершить
+ // Кокда операция по счету заверщена, предлагается выбор - продолжить работу, или завершить
                         printf("\nContinue or exit? - y, n\n");
                         scanf("%s", &select);
 
