@@ -12,7 +12,6 @@ int main(void){
     int pinOfUsers[SIZE];
     int accountsOfUsers[SIZE];
     int userAccount = 0;
-    int usAccount;
     char select;
 
     int* pinPtr;
