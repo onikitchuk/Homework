@@ -10,13 +10,13 @@ main(){
     printf("Enter number of rows\n");
     scanf("%d", &rows);
     for(i = 0;i < rows;i++){
-        for(j = 0;j < rows - i;j++){
+        for(j = 0;j < rows - i; j++){
             printf("%c", ' ');
         }
-        for(k = 0;k < i + 1;k++){
+        for(k = 0;k < i + 1; k++){
             printf("%c", stars);
         }
-        for(m = 0;m < i ;m++){
+        for(m = 0;m < i ; m++){
             printf("%c", stars);
         }
         if(i == (rows - 1)){
