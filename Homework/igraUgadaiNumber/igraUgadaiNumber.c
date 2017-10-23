@@ -4,57 +4,57 @@
 
 int main(){
 
-   int searchedNum = 0;
-   int usersNum = 0;
-   char select;
-   int i;
-   int val;
+   int randomNumber = 0;
+   int enteredNumber = 0;
+   char choiceOfAction = 0;
+   int i = 0;
+   int val = 0;
 
    for(;;){
-    srand(time(NULL));
-    searchedNum = rand() %10;
+        srand(time(NULL));
+        randomNumber = rand() %10;
 
-    for(i = 0; i < 3; i++){
-        if(i == 2){
-            printf("\nLast try!\n");
-        }
-        for(;;){
-
-            printf("\nEnter posiive value: \n");
-                val = scanf("%d", &usersNum);
-            if(usersNum < 0){
-                printf("Hey, it`s negative number!\n");
-                continue;
+        for(i = 0; i < 3; i++){
+            if(i == 2){
+                printf("\nLast try!\n");
             }
-            if(val == 0){
-                printf("\nIt`s not correct value!\n");
-                fflush(stdin);
-                continue;
-            }
-            break;
+            for(;;){
 
+                printf("\nEnter posiive value ( from 1 to 10 ):\n");
+                    val = scanf("%d", &enteredNumber);
+                if(enteredNumber < 0){
+                    printf("Hey, it`s negative number!\n");
+                    continue;
+                }
+                if(val == 0){
+                    printf("\nIt`s not correct value!\n");
+                    fflush(stdin);
+                    continue;
+                }
+                break;
+
+            }
+            if(randomNumber == enteredNumber){
+                printf("YaaHOOO!\n");
+                return 0;
+            }
+            if(enteredNumber < randomNumber){
+                printf("Bigger!\n");
+            }
+            if(enteredNumber > randomNumber){
+                printf("Lower!\n");
+            }
         }
-        if(searchedNum == usersNum){
-            printf("YaaHOOO!\n");
-            return 0;
+        printf("\nEnd of game!\n");
+        printf("\nContinue or exit? - y, n");
+        printf("\n");
+        scanf("%s", &choiceOfAction);
+        if(choiceOfAction == 'y'){
+            continue;
         }
-        if(usersNum < searchedNum){
-            printf("Bigger!\n");
+        if(choiceOfAction == 'n'){
+            return;
         }
-        if(usersNum > searchedNum){
-            printf("Lower!\n");
-        }
-    }
-    printf("\nEnd of game!\n");
-    printf("\nContinue or exit? - y, n");
-    printf("\n");
-    scanf("%s", &select);
-    if(select == 'y'){
-        continue;
-    }
-    if(select == 'n'){
-        return;
-    }
    }
    return 0;
 }
