@@ -19,7 +19,6 @@ int main(){
                 printf("\nLast try!\n");
             }
             for(;;){
-
                 printf("\nEnter posiive value ( from 1 to 10 ):\n");
                     val = scanf("%d", &enteredNumber);
                 if(enteredNumber < 0){
@@ -32,7 +31,6 @@ int main(){
                     continue;
                 }
                 break;
-
             }
             if(randomNumber == enteredNumber){
                 printf("YaaHOOO!\n");
