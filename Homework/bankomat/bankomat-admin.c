@@ -205,7 +205,6 @@ int main(void){
  // Выход администратора
                             case 4 :
                                 return;
-
                         }
                         break;
                         }
