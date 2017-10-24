@@ -9,6 +9,7 @@ int main(void){
     const int NUMBER_FOR_ALGORITM_3 = 12000;
     const int NUMBER_FOR_ALGORITM_4 = 900;
     const int ADMIN_PASSWORD = 1111;
+    const int EXIT_FROM_THE_CYCLE = 3;
 
     int pinOfUsers[SIZE];
     int accountsOfUsers[SIZE];
@@ -69,7 +70,7 @@ int main(void){
                     if(enteredPin == pinOfUser){
                         printf("\nHello, Vladimir!");
                         userAccount = accountsOfUsers[i]; // В переменную записываем значение счета
-                        j = 3;                      // с таким же индексом, что и совпавший PIN - код
+                        j = EXIT_FROM_THE_CYCLE;                      // с таким же индексом, что и совпавший PIN - код
                         break;
                     }
                 }
