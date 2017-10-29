@@ -43,10 +43,8 @@ char enteredString[SIZE_ENTERED_STRING];
 
 printf("Enter the word:\n");
 scanf("%s", &enteredString);
-    for(i,j; enteredString[i] != '\0'; i++)
-        {
-            if(enteredString[i] != ' ')
-                {
+    for(i,j; enteredString[i] != '\0'; i++){
+            if(enteredString[i] != ' '){
                     letterOfString[j++] = enteredString[i];
                     letterOfString[j] = '\0';
                 }
