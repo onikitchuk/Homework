@@ -41,7 +41,7 @@ int i = 0;
 int j = 0;
 char enteredString[SIZE_ENTERED_STRING];
 
-printf("Get String\n");
+printf("Enter the word:\n");
 scanf("%s", &enteredString);
     for(i,j; enteredString[i] != '\0'; i++)
         {
