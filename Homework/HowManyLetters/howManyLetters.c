@@ -27,7 +27,6 @@ int countLetters[SIZE_COUNT] = {0};
                 }
         }
 
-
     for(k = 0;k < strlen(letterOfString);k++){
         for(i = 0; i < SIZE_COUNT; i++){
             if(alphabet[i] == letterOfString[k])
@@ -58,12 +57,10 @@ int countLetters[SIZE_COUNT] = {0};
             if(countLetters[n] != 0){
                 printf("%d ", countLetters[n]);
             }
-
     }
 
     return 0;
 }
-
 
 
 
