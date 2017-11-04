@@ -3,13 +3,13 @@
 
 
 
-void sort(char* lettStr, int* countOfLetter){
-         int temporary = 0;
-    int temporaryLetter = 0;
-    int i = 0;
-    int j = 0;
+    void sort(char* lettStr, int* countOfLetter){
+        int temporary = 0;
+        int temporaryLetter = 0;
+        int i = 0;
+        int j = 0;
 
-            for(i = 0; i <= strlen(lettStr); i++){
+        for(i = 0; i <= strlen(lettStr); i++){
             for(j = 0; j <= strlen(lettStr); j++){
                 if(countOfLetter[j] < countOfLetter[j + 1]){
                     temporary = countOfLetter[j];
@@ -21,9 +21,8 @@ void sort(char* lettStr, int* countOfLetter){
                     lettStr[j + 1] = temporaryLetter;
                 }
             }
-
         }
-}
+    }
 
 
 int main() {
@@ -61,8 +60,6 @@ int main() {
 
         }
         lettStr[tempCount] = 0;
-
-      //  printf("\n%s", lettStr);
 
         printf(" \n Unsorted list:\n");
         for(i = 0; i < strlen(lettStr); i++){
