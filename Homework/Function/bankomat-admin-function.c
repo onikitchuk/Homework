@@ -54,7 +54,8 @@ int main(){
     int adminChoiceOfAction = 0;
 
 
-    makeArraysOfPinAndUsers(NUMBER_FOR_ALGORITM_1,  NUMBER_FOR_ALGORITM_2,  NUMBER_FOR_ALGORITM_3,  NUMBER_FOR_ALGORITM_4,  SIZE, pinOfUsers, accountsOfUsers);
+    makeArraysOfPinAndUsers(NUMBER_FOR_ALGORITM_1,  NUMBER_FOR_ALGORITM_2,  NUMBER_FOR_ALGORITM_3,
+                             NUMBER_FOR_ALGORITM_4,  SIZE, pinOfUsers, accountsOfUsers);
 
         printf("\n");
 
