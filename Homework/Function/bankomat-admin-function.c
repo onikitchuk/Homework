@@ -1,7 +1,9 @@
 ﻿#include <stdio.h>
 
 
-void makeArraysOfPinAndUsers(int NUMBER_FOR_ALGORITM_1, int NUMBER_FOR_ALGORITM_2, int NUMBER_FOR_ALGORITM_3, int NUMBER_FOR_ALGORITM_4, int SIZE, int* pinOfUsers, int* accountsOfUsers){
+void makeArraysOfPinAndUsers(int NUMBER_FOR_ALGORITM_1, int NUMBER_FOR_ALGORITM_2,
+                             int NUMBER_FOR_ALGORITM_3, int NUMBER_FOR_ALGORITM_4,
+                             int SIZE, int* pinOfUsers, int* accountsOfUsers){
 
     int i = 0;
 
