@@ -3,6 +3,7 @@
 
 
 
+
     void sort(char* lettStr, int* countOfLetter, int temporary, int temporaryLetter){
 
         int i = 0;
@@ -22,6 +23,20 @@
             }
         }
     }
+
+
+void printUnsortedList(char* lettStr, char* enteredStr,
+                        int* countOfLetter, int i, int j){
+          printf(" \n Unsorted list:\n");
+          for(i = 0; i < strlen(lettStr); i++){
+            for(j = 0; j < strlen(enteredStr); j++){
+                if(lettStr[i] == enteredStr[j]){
+                    countOfLetter[i]++;
+                }
+            }
+            printf("%5c - %d\n", lettStr[i], countOfLetter[i]);
+        }
+}
 
 
 int main() {
@@ -60,15 +75,8 @@ int main() {
         }
         lettStr[tempCount] = 0;
 
-        printf(" \n Unsorted list:\n");
-        for(i = 0; i < strlen(lettStr); i++){
-            for(j = 0; j < strlen(enteredStr); j++){
-                if(lettStr[i] == enteredStr[j]){
-                    countOfLetter[i]++;
-                }
-            }
-            printf("%5c - %d\n", lettStr[i], countOfLetter[i]);
-        }
+        printUnsortedList(lettStr, enteredStr, countOfLetter,i,j);
+
         printf("\n");
 
         sort(lettStr, countOfLetter, temporary, temporaryLetter);
@@ -81,7 +89,6 @@ int main() {
                 printf("%5c - %d\n", lettStr[m], countOfLetter[m]);
             }
         }
-
 
         return 0;
 }
