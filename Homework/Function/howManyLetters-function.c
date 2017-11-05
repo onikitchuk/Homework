@@ -23,6 +23,7 @@
     }
 
 
+
 void printUnsortedList(char* lettStr, char* enteredStr,
                         int* countOfLetter, int i, int j){
           printf(" \n Unsorted list:\n");
@@ -35,22 +36,10 @@ void printUnsortedList(char* lettStr, char* enteredStr,
             printf("%5c - %d\n", lettStr[i], countOfLetter[i]);
         }
 }
-
-
-int main() {
-
-    int i,j;
-    int countOfLetter[SIZE];
-    int temporary = 0;
-    int temporaryLetter = 0;
-
-    char enteredStr[SIZE];
-    char lettStr[SIZE];
-
-        printf("Enter some words:\n");
-        gets(enteredStr);
-
-        for(i = 0; i < SIZE; i++){
+void testLetter(int countOfLetter[], char enteredStr[], char lettStr[]){
+    int i = 0;
+    int j = 0;
+               for(i = 0; i < SIZE; i++){
             countOfLetter[i] = 0;
         }
             int tempCount = 0;
@@ -72,6 +61,23 @@ int main() {
 
         }
         lettStr[tempCount] = 0;
+
+}
+
+int main() {
+
+    int i,j;
+    int countOfLetter[SIZE];
+    int temporary = 0;
+    int temporaryLetter = 0;
+
+    char enteredStr[SIZE];
+    char lettStr[SIZE];
+
+        printf("Enter some words:\n");
+        gets(enteredStr);
+
+        testLetter(countOfLetter,  enteredStr, lettStr);
 
         printUnsortedList(lettStr, enteredStr, countOfLetter,i,j);
 
