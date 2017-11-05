@@ -3,9 +3,8 @@
 
 
 
-    void sort(char* lettStr, int* countOfLetter){
-        int temporary = 0;
-        int temporaryLetter = 0;
+    void sort(char* lettStr, int* countOfLetter, int temporary, int temporaryLetter){
+
         int i = 0;
         int j = 0;
 
@@ -72,7 +71,7 @@ int main() {
         }
         printf("\n");
 
-        sort(lettStr, countOfLetter);
+        sort(lettStr, countOfLetter, temporary, temporaryLetter);
 
             printf("\n");
             printf(" Sorted list:\n");
