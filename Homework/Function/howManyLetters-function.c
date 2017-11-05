@@ -2,8 +2,6 @@
 #define SIZE 100
 
 
-
-
     void sort(char* lettStr, int* countOfLetter, int temporary, int temporaryLetter){
 
         int i = 0;
