@@ -39,7 +39,7 @@ void printUnsortedList(char* lettStr, char* enteredStr,
 void testLetter(int countOfLetter[], char enteredStr[], char lettStr[]){
     int i = 0;
     int j = 0;
-               for(i = 0; i < SIZE; i++){
+        for(i = 0; i < SIZE; i++){
             countOfLetter[i] = 0;
         }
             int tempCount = 0;
