@@ -40,7 +40,7 @@ int main(){
    printf("Enter the rows or Christmas Tree:\n");
    scanf("%d", &height);
 //   printf("%d\n", height);
-   int ok = christmasTree(height);
+   christmasTree(height);
 
    return 0;
 }
