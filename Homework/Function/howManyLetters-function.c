@@ -79,11 +79,8 @@ int main() {
         gets(enteredStr);
 
         testLetter(countOfLetter,  enteredStr, lettStr);
-
         printUnsortedList(lettStr, enteredStr, countOfLetter,i,j);
-
         printf("\n");
-
         sort(lettStr, countOfLetter, temporary, temporaryLetter);
 
             printf("\n");

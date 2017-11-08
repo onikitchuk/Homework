@@ -24,7 +24,6 @@ int main() {
     char* enteredString = (char*)malloc(sizeof(char) * 200000);
 
         getString(enteredString);
-
         isCountOfWords(enteredString,countOfWords);
 
     return 0;
