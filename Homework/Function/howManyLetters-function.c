@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define SIZE 100
 
-
+    //sorting of letters and their counting
     void sort(char* lettStr, int* countOfLetter, int temporary, int temporaryLetter){
 
         int i = 0;
@@ -23,11 +23,11 @@
     }
 
 
-
-void printUnsortedList(char* lettStr, char* enteredStr,
-                        int* countOfLetter, int i, int j){
-          printf(" \n Unsorted list:\n");
-          for(i = 0; i < strlen(lettStr); i++){
+    //unselected list printing
+    void printUnsortedList(char* lettStr, char* enteredStr,
+                            int* countOfLetter, int i, int j){
+            printf(" \n Unsorted list:\n");
+        for(i = 0; i < strlen(lettStr); i++){
             for(j = 0; j < strlen(enteredStr); j++){
                 if(lettStr[i] == enteredStr[j]){
                     countOfLetter[i]++;
@@ -35,46 +35,47 @@ void printUnsortedList(char* lettStr, char* enteredStr,
             }
             printf("%5c - %d\n", lettStr[i], countOfLetter[i]);
         }
-}
-void testLetter(int countOfLetter[], char enteredStr[], char lettStr[]){
-    int i = 0;
-    int j = 0;
-        for(i = 0; i < SIZE; i++){
-            countOfLetter[i] = 0;
-        }
-            int tempCount = 0;
-        for(i = 0; i < enteredStr[i] != '\0'; i++){
-            char c = enteredStr[i];
-            if(c == ' '){
-                continue;
+    }
+    //storing one letter from a string in an array
+    void testLetter(int countOfLetter[], char enteredStr[], char lettStr[]){
+        int i = 0;
+        int j = 0;
+            for(i = 0; i < SIZE; i++){
+                countOfLetter[i] = 0;
             }
-            int varTest = 0;
-            for(j = 0; j < tempCount; j++){
-                if(lettStr[j] == c){
-                    varTest = 1;
+                int tempCount = 0;
+            for(i = 0; i < enteredStr[i] != '\0'; i++){
+                char c = enteredStr[i];
+                if(c == ' '){
+                    continue;
                 }
-            }
-            if(varTest == 0){
-                lettStr[tempCount] = c;
-                tempCount++;
-            }
+                int varTest = 0;
+                for(j = 0; j < tempCount; j++){
+                    if(lettStr[j] == c){
+                        varTest = 1;
+                    }
+                }
+                if(varTest == 0){
+                    lettStr[tempCount] = c;
+                    tempCount++;
+                }
 
-        }
-        lettStr[tempCount] = 0;
-
-}
+            }
+            lettStr[tempCount] = 0;
+    }
 
 int main() {
 
     int i,j;
     int countOfLetter[SIZE];
+
     int temporary = 0;
     int temporaryLetter = 0;
 
-    char enteredStr[SIZE];
     char lettStr[SIZE];
 
         printf("Enter some words:\n");
+        char* enteredStr = (char*)malloc(sizeof(char) * 200000);
         gets(enteredStr);
 
         testLetter(countOfLetter,  enteredStr, lettStr);
@@ -93,6 +94,6 @@ int main() {
                 printf("%5c - %d\n", lettStr[m], countOfLetter[m]);
             }
         }
-
+        free(enteredStr);
         return 0;
 }
