@@ -2,8 +2,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-
-void choice(enteredNumber, randomNumber, val){
+//choosing the correct number from 3 attempts
+void choiceNumber(enteredNumber, randomNumber, val){
 
         int i = 0;
 
@@ -51,7 +51,7 @@ int main(){
         srand(time(NULL));
         randomNumber = rand() %10;
 
-    choice(enteredNumber, randomNumber, val);
+    choiceNumber(enteredNumber, randomNumber, val);
 
         printf("\nEnd of game!\n");
         printf("\nContinue or exit? - y, n");
@@ -64,6 +64,7 @@ int main(){
             return;
         }
    }
+
    return 0;
 }
 

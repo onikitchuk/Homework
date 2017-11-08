@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-
+//drawing a Christmas tree depending on the height
 int christmasTree(int height){
     int i,j;
     int g = 0;
@@ -39,10 +39,8 @@ int main(){
    int height = 0;
    printf("Enter the rows or Christmas Tree:\n");
    scanf("%d", &height);
-//   printf("%d\n", height);
    christmasTree(height);
-
-   return 0;
+    return 0;
 }
 
 
