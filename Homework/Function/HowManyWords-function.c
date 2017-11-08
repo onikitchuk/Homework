@@ -3,7 +3,7 @@
 
 //receiving a string from the user
 char getString(char* enteredString){
-        printf("Enter the string of words:\n");
+        printf("Enter the letters and symbols:\n");
         gets(enteredString);
 }
 //counting words
@@ -25,6 +25,6 @@ int main() {
 
         getString(enteredString);
         isCountOfWords(enteredString,countOfWords);
-
+    free(enteredString);
     return 0;
 }
