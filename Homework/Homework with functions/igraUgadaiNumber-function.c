@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 //choosing the correct number from 3 attempts
-void choiceNumber(enteredNumber, randomNumber, val){
+void choiceNumber(int enteredNumber, int randomNumber, int val){
 
         int i = 0;
 
