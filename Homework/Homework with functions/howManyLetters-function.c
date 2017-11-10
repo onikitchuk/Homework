@@ -37,7 +37,7 @@
         }
     }
     //storing one letter from a string in an array
-    void testLetter(int countOfLetter[], char enteredStr[], char letterStr[]){
+    void storingOneLettersInArray(int countOfLetter[], char enteredStr[], char letterStr[]){
         int i = 0;
         int j = 0;
         int sizeCountOfLetter = strlen(countOfLetter);
@@ -77,7 +77,7 @@ int main() {
         printf("Enter some words:\n");
         gets(enteredStr);
 
-        testLetter(countOfLetter,  enteredStr, letterStr);
+        storingOneLettersInArray(countOfLetter,  enteredStr, letterStr);
         printUnsortedList(letterStr, enteredStr, countOfLetter);
         printf("\n");
         sort(letterStr, countOfLetter, temporary, temporaryLetter);
