@@ -21,7 +21,6 @@
         }
     }
 
-
     //Unsorted list printing
     void printUnsortedList(char* letterStr, char* enteredStr, int* countOfLetter){
          int i = 0;
@@ -38,6 +37,7 @@
             printf("%5c - %d\n", letterStr[i], countOfLetter[i]);
         }
     }
+
     //storing one letter from a string in an array
     void storingOneLetterInArray(int countOfLetter[], char enteredStr[], char letterStr[]){
         int i = 0;
