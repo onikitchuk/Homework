@@ -85,10 +85,12 @@ int main() {
         sort(letterStr, countOfLetter, temporary, temporaryLetter);
 
         printf("\n");
-        printf(" Sorted list:\n");
 
+        //Sorted list printing
+        printf(" Sorted list:\n");
         int m;
-        for(m = 0; m <= strlen(letterStr); m++){
+        int sizeOfLetterStr = strlen(letterStr);
+        for(m = 0; m <= sizeOfLetterStr; m++){
             if(countOfLetter[m] != 0){
                 printf("%5c - %d\n", letterStr[m], countOfLetter[m]);
             }
