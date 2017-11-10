@@ -92,5 +92,7 @@ int main() {
             }
         }
         free(enteredStr);
+        free(letterStr);
+        free(countOfLetter);
         return 0;
 }
