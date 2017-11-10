@@ -22,13 +22,15 @@
     }
 
 
-    //unselected list printing
+    //Unsorted list printing
     void printUnsortedList(char* letterStr, char* enteredStr, int* countOfLetter){
          int i = 0;
          int j = 0;
         printf(" \n Unsorted list:\n");
-        for(i = 0; i < strlen(letterStr); i++){
-            for(j = 0; j < strlen(enteredStr); j++){
+        int sizeOfLetterStr = strlen(letterStr);
+        int sizeOfEnteredStr = strlen(enteredStr);
+        for(i = 0; i < sizeOfLetterStr; i++){
+            for(j = 0; j < sizeOfEnteredStr; j++){
                 if(letterStr[i] == enteredStr[j]){
                     countOfLetter[i]++;
                 }
