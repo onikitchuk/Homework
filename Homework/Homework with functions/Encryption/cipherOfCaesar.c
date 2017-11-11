@@ -22,14 +22,14 @@
         printf("Enter the phrase you want to encrypt: \n");
         gets(enteredPhrase);
         printf("Enter key for encrypt: ");
-        scanf("%i", &keyForEncrypt);
+        scanf("%d", &keyForEncrypt);
 
         encryptPhrase(enteredPhrase, keyForEncrypt);
 
         encryptedPhrase = enteredPhrase;
 
           printf("\nDo you want to decrypt phrase? - 1 / 0");
-          scanf("%3i", &choiceOfAction);
+          scanf("%d", &choiceOfAction);
               if(choiceOfAction == 0){
                 return;
               }
