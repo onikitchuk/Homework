@@ -5,17 +5,17 @@
 
         int i = 0;
         int j = 0;
-        int sizeOfLettStr = strlen(letterStr);
-        for(i = 0; i <= sizeOfLettStr; i++){
-            for(j = 0; j <= sizeOfLettStr; j++){
-                if(countOfLetter[j] < countOfLetter[j + 1]){
+        int sizeOfLetterStr = strlen(letterStr);
+        for(i = 0; i < sizeOfLetterStr; i++){
+            for(j = i + 1; j < sizeOfLetterStr; j++){
+                if(countOfLetter[i] < countOfLetter[j]){
                     temporary = countOfLetter[j];
-                    countOfLetter[j] = countOfLetter[j + 1];
-                    countOfLetter[j + 1] = temporary;
+                    countOfLetter[j] = countOfLetter[i];
+                    countOfLetter[i] = temporary;
 
                     temporaryLetter = letterStr[j];
-                    letterStr[j] = letterStr[j + 1];
-                    letterStr[j + 1] = temporaryLetter;
+                    letterStr[j] = letterStr[i];
+                    letterStr[i] = temporaryLetter;
                 }
             }
         }
