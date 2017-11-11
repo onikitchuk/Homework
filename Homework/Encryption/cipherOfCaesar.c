@@ -39,7 +39,10 @@
                     encryptedPhrase[i] -= keyForEncrypt;
                  }
                 decryptedPhrase = encryptedPhrase;
-                printf("\nOpen phrase - %s", decryptedPhrase);
+                printf("\nOpen phrase - %s\n", decryptedPhrase);
               }
+              free(enteredPhrase);
+              free(encryptedPhrase);
+              free(decryptedPhrase);
         return 0;
     }
