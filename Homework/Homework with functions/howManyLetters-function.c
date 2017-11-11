@@ -1,7 +1,7 @@
 #include <stdio.h>
 
     //sorting of letters and their counting
-    void sort(char* letterStr, int* countOfLetter, int temporary, int temporaryLetter){
+    void sort(char* letterStr, int* countOfLetter, int temporaryCount, int temporaryLetter){
 
         int i = 0;
         int j = 0;
@@ -9,9 +9,9 @@
         for(i = 0; i < sizeOfLetterStr; i++){
             for(j = i + 1; j < sizeOfLetterStr; j++){
                 if(countOfLetter[i] < countOfLetter[j]){
-                    temporary = countOfLetter[j];
+                    temporaryCount = countOfLetter[j];
                     countOfLetter[j] = countOfLetter[i];
-                    countOfLetter[i] = temporary;
+                    countOfLetter[i] = temporaryCount;
 
                     temporaryLetter = letterStr[j];
                     letterStr[j] = letterStr[i];
@@ -69,7 +69,7 @@
 int main() {
 
     int i,j;
-    int temporary = 0;
+    int temporaryCount = 0;
     int temporaryLetter = 0;
 
     char* enteredStr = (char*)malloc(sizeof(char) * 200000);
@@ -82,7 +82,7 @@ int main() {
         storingOneLetterInArray(countOfLetter,  enteredStr, letterStr);
         printUnsortedList(letterStr, enteredStr, countOfLetter);
         printf("\n");
-        sort(letterStr, countOfLetter, temporary, temporaryLetter);
+        sort(letterStr, countOfLetter, temporaryCount, temporaryLetter);
 
         printf("\n");
 
