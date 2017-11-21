@@ -52,8 +52,6 @@ public:
             <<endl;
             cout<<""<<endl;
         }
-        cout<<animals[0]->name<<" "<<animals[0]->kind<<endl;
-        cout<<animals[1]->name<<" "<<animals[1]->kind<<endl;
         delete []name;
         delete []kind;
     }
