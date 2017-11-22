@@ -15,15 +15,17 @@ class Animal{
 
     public:
         Animal(){
-        name = "No name";
-        kind = "No kind";
-        age = 0;
-        pawsNum = 0;
-        health = 0;
-        isPresent = 0;
+            name = "No name";
+            kind = "No kind";
+            age = 0;
+            pawsNum = 0;
+            health = 0;
+            isPresent = false;
+
         };
 
         void setAnimal(){
+
             cout<<"Enter the name of the animal"<<endl;
             getline(cin, name);
             getline(cin, name);
@@ -54,13 +56,14 @@ class Animal{
 
             if(isPresent == 1){
                 cout<<"This animal is present in the show"<<endl;
-            }else{
+            }
+            if(isPresent == 0){
                 cout<<"This animal is absent"<<endl;
             }
                 cout<<"--------------------------------"<<endl;
             }
         ~Animal(){
-            cout<< "Destructor works" <<endl;
+            cout<<"Destructor works"<<endl;
         }
 };
 
@@ -138,7 +141,6 @@ class Manager{
             }
         }
     public:
-        Manager() {};
         Zoo Z;
         int k = 1;
         int a;
@@ -154,8 +156,8 @@ class Manager{
                 if(a == 4){
                     k = 0;
                 }
-            }while(k);
-            return 1;
+            } while (k);
+              return 1;
         }
 };
 
