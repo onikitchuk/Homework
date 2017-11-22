@@ -73,12 +73,6 @@ class Zoo{
         int countOfAnimals = 0;
         Zoo(){ sizeOfArrayOfAnimals = 0;};
 
-        void addAnimal(){
-            arrayOfAnimals[sizeOfArrayOfAnimals].setAnimal();
-            sizeOfArrayOfAnimals++;
-            countOfAnimals++;
-        }
-
         void showAnimal(){
             cout<<"******************"<<endl;
             cout<<"--- Population ---"<<endl<<endl;
@@ -91,6 +85,11 @@ class Zoo{
                 arrayOfAnimals[i].getAnimal();
                 cout<<endl;
             }
+        }
+        void addAnimal(){
+            arrayOfAnimals[sizeOfArrayOfAnimals].setAnimal();
+            sizeOfArrayOfAnimals++;
+            countOfAnimals++;
         }
         void deleteAnimal(){
             for(int i = 0; i < sizeOfArrayOfAnimals; i++){
@@ -114,6 +113,7 @@ class Zoo{
             for (int i = 0; i < sizeOfArrayOfAnimals; i++){
                 arrayOfAnimals[i] = operatingArray[i];
             }
+            countOfAnimals--;
         }
 };
 
