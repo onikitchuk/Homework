@@ -6,18 +6,18 @@ using namespace std;
 
 class Animal{
     private:
-        int age;
         string name;
         string kind;
+        int age;
         int pawsNum;
         int health;
         bool isPresent;
 
     public:
         Animal(){
-        age = 0;
         name = "No name";
         kind = "No kind";
+        age = 0;
         pawsNum = 0;
         health = 0;
         isPresent = 0;
@@ -51,13 +51,14 @@ class Animal{
             cout<< "Age : "<<age<<endl;
             cout<< "Number of paws: "<< pawsNum<<endl;
             cout<< "Health: "<< health<<"%"<<endl;
-        if(isPresent == 1){
-            cout<<"This animal is present in the show"<<endl;
-        }else{
-            cout<<"This animal is absent"<<endl;
-        }
-            cout<<"--------------------------------"<<endl;
-        }
+
+            if(isPresent == 1){
+                cout<<"This animal is present in the show"<<endl;
+            }else{
+                cout<<"This animal is absent"<<endl;
+            }
+                cout<<"--------------------------------"<<endl;
+            }
         ~Animal(){
             cout<< "Destructor works" <<endl;
         }
