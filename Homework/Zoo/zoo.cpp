@@ -71,7 +71,7 @@ class Zoo{
     private:
         Animal arrayOfAnimals[100];
         int sizeOfArrayOfAnimals;
-        int deleteAnimalFromArray;
+        int indexOfTheElementToBeDeleted;
     public:
         int countOfAnimals = 0;
         Zoo(){ sizeOfArrayOfAnimals = 0;};
@@ -101,13 +101,13 @@ class Zoo{
             }
             cout<<"Which animal you want to delete?"<<endl;
             cout<<"Select its index in the array:"<<endl;
-            cin >> deleteAnimalFromArray;
+            cin >> indexOfTheElementToBeDeleted;
             Animal operatingArray[100];
 
             int indexDeletedAnimal = 0;
 
             for(int i = 0; i < sizeOfArrayOfAnimals; i++){
-                if (i != deleteAnimalFromArray){
+                if (i != indexOfTheElementToBeDeleted){
                     operatingArray[indexDeletedAnimal] = arrayOfAnimals[i];
                     indexDeletedAnimal++;
                 }
