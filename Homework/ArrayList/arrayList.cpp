@@ -124,6 +124,4 @@ int main(){
     cout<<"********** Trim to size **********"<<endl;
     list->trimToSize();
     cout<<endl;
-
-
 }
