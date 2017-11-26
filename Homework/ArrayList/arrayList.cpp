@@ -65,6 +65,7 @@ public:
         int get(int index){
             cout<<endl;
             cout<<"Get item with index "<<index<<" - "<<array[index]<<" from the array"<<endl;
+            return array[index];
         }
 
         void remove(int index){
