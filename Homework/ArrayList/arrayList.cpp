@@ -69,10 +69,10 @@ public:
         }
 
         void remove(int index){
-            cout<<endl;
+            cout<<"REMOVE "<<currentSize<<endl;
             cout<<"The item with the index "<<index<<" - "<<array[index]<<" will be deleted"<<endl;
-            for( int i = index; i < currentSize; i++){
-                array[i] = array[i + 1];
+            for( int i = index + 1; i <= currentSize; i++){
+                array[i - 1] = array[i];
             }
             currentSize--;
         }
@@ -122,7 +122,7 @@ int main(){
     list->print();
     cout<<endl;
     cout <<"********** Remove element **********"<< endl;
-    list->remove(2);
+    list->remove(3);
     cout << endl;
     list->print();
     cout<<endl;
