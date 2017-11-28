@@ -2,12 +2,13 @@
 #include <iomanip>
 #include <fstream>
 #include <cstdlib>
+
 using namespace std;
 
 class Animal{
     private:
-        string name;
-        string kind;
+        char* name;
+        char* kind;
         int age;
         int pawsNum;
         int health;
@@ -15,8 +16,9 @@ class Animal{
 
     public:
         Animal(){
-            name = "No name";
-            kind = "No kind";
+
+            name = new char[30];
+            kind = new char[30];
             age = 0;
             pawsNum = 0;
             health = 0;
@@ -27,11 +29,11 @@ class Animal{
         void setAnimal(){
 
             cout<<"Enter the name of the animal"<<endl;
-            getline(cin, name);
-            getline(cin, name);
+            cin.getline(name, 30);
+            cin.getline(name, 30);
 
             cout<<"Enter the kind of animal"<<endl;
-            getline(cin, kind);
+            cin.getline(kind, 30);
 
             cout<<"Enter the age of the animal"<<endl;
             cin >> age;
@@ -79,6 +81,7 @@ class Zoo{
         void showAnimal(){
             cout<<"******************"<<endl;
             cout<<"--- Population ---"<<endl<<endl;
+
             if(countOfAnimals == 0){
                 cout<<"No animals in population"<<endl;
             }
@@ -123,7 +126,7 @@ class Zoo{
 class Manager{
     private:
         int choiceOfAction;
-    int GetUserChoice(){
+    int getUserChoice(){
         cin >> choiceOfAction;
         switch(choiceOfAction){
             case 1:
@@ -152,7 +155,7 @@ class Manager{
                 cout<<"2, Add an animal"<<endl;
                 cout<<"3. Delete the animal"<<endl;
                 cout<<"4. Finish work"<<endl;
-                a = GetUserChoice();
+                a = getUserChoice();
                 if(a == 4){
                     k = 0;
                 }
