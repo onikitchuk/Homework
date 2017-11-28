@@ -79,11 +79,15 @@ public:
 
         void trimToSize(){
             cout<<endl;
+
             int* trimArray = new int[currentSize];
+
             for(int i = 0; i < currentSize; i++){
                 trimArray[i] = array[i];
             }
             delete []array;
+            int* array = trimArray;
+            allocatedSize = currentSize;
             for(int i = 0; i < currentSize;i++){
                 cout<<trimArray[i]<<" ";
             }
