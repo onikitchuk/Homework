@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <fstream>
 #include <cstdlib>
+#include <string>
 using namespace std;
 
 class ArrayList{
@@ -69,7 +70,7 @@ public:
         }
 
         void remove(int index){
-            cout<<"REMOVE "<<currentSize<<endl;
+            cout<<endl;
             cout<<"The item with the index "<<index<<" - "<<array[index]<<" will be deleted"<<endl;
             for( int i = index + 1; i <= currentSize; i++){
                 array[i - 1] = array[i];
