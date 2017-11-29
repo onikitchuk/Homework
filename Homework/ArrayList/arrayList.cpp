@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+
 using namespace std;
 
 class ArrayList{
@@ -21,21 +22,14 @@ private:
     void addItemToFullArray(int n){
         int* newArray = new int[allocatedSize*2];
         allocatedSize *= 2;
-        for (int i = 0; i < allocatedSize; i++){
-            newArray[i] = 0;
-        }
+
         for (int i = 0; i < currentSize; i++){
             newArray[i] = array[i];
         }
+
         delete []array;
-        array = new int[allocatedSize];
-        for (int i = 0; i < allocatedSize; i++){
-            array[i] = 0;
-        }
-        for (int i = 0; i < currentSize; i++){
-            array[i] = newArray[i];
-        }
-        delete []newArray;
+        array = newArray;
+
         cout<<endl;cout<<endl;
         cout<<"The array is enlarged 2 times after the original array size is exceeded"<<endl;
         addItemToUnfilledArray(n);
@@ -78,8 +72,20 @@ public:
             cout<<endl;
         }
 
-        int get(int index){
+        int get(){
+            int index;
+            while (true){
             cout<<endl;
+            cout<<"enter the index of the item you want to receive "<<endl;
+            cin >> index;
+            if(index > currentSize){
+                cout<<"You enter incorrect value"<<endl;
+                exit(index);
+            }
+            else
+                break;
+            }
+
             cout<<"Get item with index "<<index<<" - "<<array[index]<<" from the array"<<endl;
             return array[index];
         }
@@ -99,6 +105,7 @@ public:
             for(int i = 0; i < currentSize; i++){
                 trimArray[i] = array[i];
             }
+
             delete []array;
             int* array = trimArray;
             allocatedSize = currentSize;
@@ -113,12 +120,11 @@ public:
             }
             cout<<endl;
         }
-
 };
 
 int main(){
 
-  ArrayList* list = new ArrayList(3);
+    ArrayList* list = new ArrayList(3);
     cout << "********** Source array of added elements **********"<<endl;
     cout<<endl;
     list->add(23);
@@ -134,7 +140,7 @@ int main(){
     list->print();
     cout<<endl;
     cout <<"********** Get element **********"<< endl;
-    list->get(1);
+    list->get();
     cout << endl;
     list->print();
     cout<<endl;
