@@ -7,19 +7,12 @@ using namespace std;
 
 class ArrayList{
 private:
-    const int INIT_SIZE = 3;
     int* array;
     int currentSize;
     int allocatedSize;
+    int sz;
 
-    void fillingTheCreatedArray(int* newArray){
-        for( int i = 0; i < currentSize; i++){
-           newArray[i] = array[i];
-           cout<<newArray[i]<<" ";
-        }
-    }
-
-    void addItemToUnfilledArray(int n){
+     void addItemToUnfilledArray(int n){
         array[currentSize] = n;
         currentSize++;
         return;
@@ -28,25 +21,47 @@ private:
     void addItemToFullArray(int n){
         int* newArray = new int[allocatedSize*2];
         allocatedSize *= 2;
-        fillingTheCreatedArray(newArray);
+        for (int i = 0; i < allocatedSize; i++){
+            newArray[i] = 0;
+        }
+        for (int i = 0; i < currentSize; i++){
+            newArray[i] = array[i];
+        }
         delete []array;
-        array = newArray;
+        array = new int[allocatedSize];
+        for (int i = 0; i < allocatedSize; i++){
+            array[i] = 0;
+        }
+        for (int i = 0; i < currentSize; i++){
+            array[i] = newArray[i];
+        }
+        delete []newArray;
         cout<<endl;cout<<endl;
         cout<<"The array is enlarged 2 times after the original array size is exceeded"<<endl;
         addItemToUnfilledArray(n);
     }
+
 public:
     ArrayList(){
-        array = new int[INIT_SIZE];
+        array = new int[0];
         currentSize = 0;
-        allocatedSize = INIT_SIZE;
+        allocatedSize = 0;
+    }
+
+    ArrayList(int sz){
+        array = new int[sz];
+        currentSize = 0;
+        allocatedSize = sz;
+        for ( int i = 0; i < sz; i++ ){
+            array[i] = 0;
+        }
     }
 
         void add(int n){
             if(currentSize < allocatedSize){
                 addItemToUnfilledArray(n);
             } else {
-                addItemToFullArray(n);
+               addItemToFullArray(n);
             }
         }
 
@@ -98,15 +113,18 @@ public:
             }
             cout<<endl;
         }
+
 };
 
 int main(){
-  ArrayList* list = new ArrayList();
+
+  ArrayList* list = new ArrayList(3);
     cout << "********** Source array of added elements **********"<<endl;
     cout<<endl;
     list->add(23);
     list->add(45);
     list->add(82);
+    list->print();
     list->add(444);
     cout<<endl;
     list->print();
@@ -128,5 +146,4 @@ int main(){
     cout<<"********** Trim to size **********"<<endl;
     list->trimToSize();
     cout<<endl;
-
 }
