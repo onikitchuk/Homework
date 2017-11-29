@@ -78,9 +78,9 @@ public:
             cout<<endl;
             cout<<"enter the index of the item you want to receive "<<endl;
             cin >> index;
-            if(index > currentSize || index < 0){
+            if(index < 0 || index > currentSize){
                 cout<<"You enter incorrect value"<<endl;
-                exit(index);
+               exit(index);
             }
             else
                 break;
