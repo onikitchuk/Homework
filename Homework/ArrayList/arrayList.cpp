@@ -12,28 +12,28 @@ private:
     int currentSize;
     int allocatedSize;
 
-    void fillNewArray(int* newArray){
+    void fillingTheCreatedArray(int* newArray){
         for( int i = 0; i < currentSize; i++){
            newArray[i] = array[i];
            cout<<newArray[i]<<" ";
         }
     }
 
-    void addToNotFullArray(int n){
+    void addItemToUnfilledArray(int n){
         array[currentSize] = n;
         currentSize++;
         return;
     }
 
-    void addToFullArray(int n){
+    void addItemToFullArray(int n){
         int* newArray = new int[allocatedSize*2];
         allocatedSize *= 2;
-        fillNewArray(newArray);
+        fillingTheCreatedArray(newArray);
         delete []array;
         array = newArray;
         cout<<endl;cout<<endl;
         cout<<"The array is enlarged 2 times after the original array size is exceeded"<<endl;
-        addToNotFullArray(n);
+        addItemToUnfilledArray(n);
     }
 public:
     ArrayList(){
@@ -44,9 +44,9 @@ public:
 
         void add(int n){
             if(currentSize < allocatedSize){
-                addToNotFullArray(n);
+                addItemToUnfilledArray(n);
             } else {
-                addToFullArray(n);
+                addItemToFullArray(n);
             }
         }
 
@@ -80,9 +80,7 @@ public:
 
         void trimToSize(){
             cout<<endl;
-
             int* trimArray = new int[currentSize];
-
             for(int i = 0; i < currentSize; i++){
                 trimArray[i] = array[i];
             }
@@ -130,4 +128,5 @@ int main(){
     cout<<"********** Trim to size **********"<<endl;
     list->trimToSize();
     cout<<endl;
+
 }
