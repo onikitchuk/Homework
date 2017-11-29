@@ -16,18 +16,24 @@ class Animal{
 
     public:
         Animal(){
-
+            age = 0;
             name = new char[30];
             kind = new char[30];
-            age = 0;
             pawsNum = 0;
             health = 0;
             isPresent = false;
-
         };
 
-        void setAnimal(){
+        Animal(int age, char* name, char* kind, int pawsNum, int health, bool isPreaent){
+            this->age = age;
+            this->name = name;
+            this->kind = kind;
+            this->pawsNum = pawsNum;
+            this->health = health;
+            this->isPresent = isPreaent;
+        }
 
+        void setAnimal(){
             cout<<"Enter the name of the animal"<<endl;
             cin.getline(name, 30);
             cin.getline(name, 30);
@@ -74,10 +80,14 @@ class Zoo{
         Animal arrayOfAnimals[100];
         int sizeOfArrayOfAnimals;
         int indexOfTheElementToBeDeleted;
-    public:
         int countOfAnimals = 0;
-        Zoo(){ sizeOfArrayOfAnimals = 0;};
-
+    public:
+        Zoo(){sizeOfArrayOfAnimals = 0;};
+        Zoo(int sizeOfArrayOfAnimals, int indexOfTheElementToBeDeleted, int countOfAnimals){
+            this->sizeOfArrayOfAnimals = sizeOfArrayOfAnimals;
+            this->indexOfTheElementToBeDeleted = indexOfTheElementToBeDeleted;
+            this->countOfAnimals = countOfAnimals;
+        }
         void showAnimal(){
             cout<<"******************"<<endl;
             cout<<"--- Population ---"<<endl<<endl;
@@ -92,11 +102,13 @@ class Zoo{
                 cout<<endl;
             }
         }
+
         void addAnimal(){
             arrayOfAnimals[sizeOfArrayOfAnimals].setAnimal();
             sizeOfArrayOfAnimals++;
             countOfAnimals++;
         }
+
         void deleteAnimal(){
             for(int i = 0; i < sizeOfArrayOfAnimals; i++){
                 arrayOfAnimals[i].getAnimal();
@@ -160,12 +172,14 @@ class Manager{
                     k = 0;
                 }
             } while (k);
-              return 1;
+                return 1;
         }
 };
 
 int main(){
     Manager M;
-    if (M.showUserMenu() == 0)
+    if (M.showUserMenu() == 0){
         return 0;
+    }
+
 }
