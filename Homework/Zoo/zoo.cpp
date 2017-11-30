@@ -156,7 +156,6 @@ class zooManager{
             }
         }
     public:
-
         Zoo* Z = new Zoo(0,0,0);
         int k = 1;
         int a;
@@ -178,7 +177,6 @@ class zooManager{
 };
 
 int main(){
-
     zooManager z;
     if (z.showUserMenu() == 0){
         return 0;
