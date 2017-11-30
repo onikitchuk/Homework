@@ -83,10 +83,11 @@ class Zoo{
         int countOfAnimals = 0;
     public:
         Zoo(int sizeOfArrayOfAnimals, int indexOfTheElementToBeDeleted, int countOfAnimals){
-            this->sizeOfArrayOfAnimals = sizeOfArrayOfAnimals = 0;
+            this->sizeOfArrayOfAnimals = sizeOfArrayOfAnimals;
             this->indexOfTheElementToBeDeleted = indexOfTheElementToBeDeleted;
             this->countOfAnimals = countOfAnimals;
         }
+
         void showAnimal(){
             cout<<"******************"<<endl;
             cout<<"--- Population ---"<<endl<<endl;
@@ -134,7 +135,7 @@ class Zoo{
         }
 };
 
-class Manager{
+class zooManager{
     private:
         int choiceOfAction;
     int getUserChoice(){
@@ -178,8 +179,8 @@ class Manager{
 
 int main(){
 
-    Manager M;
-    if (M.showUserMenu() == 0){
+    zooManager z;
+    if (z.showUserMenu() == 0){
         return 0;
     }
 
