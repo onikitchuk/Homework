@@ -6,7 +6,7 @@
 using namespace std;
 
 class Animal{
-    private:
+    public:
         char* name;
         char* kind;
         int age;
@@ -22,7 +22,7 @@ class Animal{
             pawsNum = 0;
             health = 0;
             isPresent = false;
-        };
+        }
 
         Animal(int age, char* name, char* kind, int pawsNum, int health, bool isPreaent){
             this->age = age;
@@ -82,9 +82,8 @@ class Zoo{
         int indexOfTheElementToBeDeleted;
         int countOfAnimals = 0;
     public:
-        Zoo(){sizeOfArrayOfAnimals = 0;};
         Zoo(int sizeOfArrayOfAnimals, int indexOfTheElementToBeDeleted, int countOfAnimals){
-            this->sizeOfArrayOfAnimals = sizeOfArrayOfAnimals;
+            this->sizeOfArrayOfAnimals = sizeOfArrayOfAnimals = 0;
             this->indexOfTheElementToBeDeleted = indexOfTheElementToBeDeleted;
             this->countOfAnimals = countOfAnimals;
         }
@@ -142,13 +141,13 @@ class Manager{
         cin >> choiceOfAction;
         switch(choiceOfAction){
             case 1:
-                Z.showAnimal();
+                Z->showAnimal();
                 break;
             case 2:
-                Z.addAnimal();
+                Z->addAnimal();
                 break;
             case 3:
-                Z.deleteAnimal();
+                Z->deleteAnimal();
                 break;
             case 4:
                 return 4;
@@ -156,7 +155,8 @@ class Manager{
             }
         }
     public:
-        Zoo Z;
+
+        Zoo* Z = new Zoo(0,0,0);
         int k = 1;
         int a;
         int showUserMenu(){
@@ -177,6 +177,7 @@ class Manager{
 };
 
 int main(){
+
     Manager M;
     if (M.showUserMenu() == 0){
         return 0;
