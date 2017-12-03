@@ -17,26 +17,28 @@ public:
 class List{
 public:
         Node* firstNode = NULL;
-        void init(int n,Node* node = NULL);
+        void add(int n,Node* node = NULL);
         void get(int index);
-        void addByIndex(int n, int index);
+        void addByIndex(Node* node,int n, int index);
         void removeFromIndex(int index);
         void print(Node* n);
 };
 
-void List::init(int n, Node* node){
+void List::add(int n, Node* node){
         if(firstNode == NULL){
         firstNode = new Node(n);
         return;
         }
         if(node->next != NULL){
-            init(n, node->next);
+            add(n, node->next);
             return;
         }
         Node* newNode = new Node(n);
         node->next = newNode;
+        if(node->prev != NULL){
+             node->prev = node;
+        }
     }
-
 
 void List::get(int index){
         Node* n = firstNode;
@@ -49,21 +51,16 @@ void List::get(int index){
         }
     }
 
-void List::addByIndex(int n,int index){
-    Node* temp = firstNode;
-    int count = 0;
-    while(temp != NULL){
-          if(count == index - 1){
-            Node* it = new Node(n);
-            it->next = temp->next;
-            it->prev = temp;
-            temp->next = it;
-            it->next->prev = it;
-            break;
-        } else {
-            count++;
-            temp = temp->next;
-        }
+ void List::addByIndex(Node* node,int n,int index){
+    if(index > 1){
+        addByIndex(node->next, n, index - 1);
+    } else{
+        Node* it = new Node(n);
+        Node* old = node->next;
+        node->next = it;
+        it->next = old;
+        it->prev = node;
+        old -> prev = it;
     }
  }
 
@@ -88,18 +85,18 @@ void List::print(Node* n){
 int main(){
     List l;
 
-    l.init(12,l.firstNode);
-    l.init(23,l.firstNode);
-    l.init(27,l.firstNode);
-    l.init(56,l.firstNode);
-    l.init(78,l.firstNode);
+    l.add(12,l.firstNode);
+    l.add(23,l.firstNode);
+    l.add(27,l.firstNode);
+    l.add(56,l.firstNode);
+    l.add(78,l.firstNode);
 
     cout<<"List : "<<endl;
     l.print(l.firstNode);
     cout<<"\n\nGET : "<<endl;
     l.get(3);
     cout<<"\nAdd 125 by index ** 4 ************\n"<<endl;
-    l.addByIndex(125,4);
+    l.addByIndex(l.firstNode,125,4);
     l.print(l.firstNode);
     cout<<endl;
     cout<<"\nRemove 27 from index ** 2 ************\n"<<endl;
